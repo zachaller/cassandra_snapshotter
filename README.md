@@ -41,6 +41,7 @@ cassandra-snapshotter --aws-access-key-id=X --aws-secret-access-key=Y --s3-bucke
 
 
 - connects via ssh to hosts h1,h2,h3,h4 using user cassandra
+- if you have more than 12 nodes be sure to set --connection-pool-size to the number of nodes you have
 - backups up (using snapshots or incremental backups) on the S3 bucket Z
 - backups are stored in /mycluster/
 - if your bucket is in other then us-west-1 region, you should really specify the region in the command line; otherwise weird 'connection reset by peer' errors can appear as you'll be transferring files through us-west-1 over to eg. eu-west-1
